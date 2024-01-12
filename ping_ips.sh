@@ -31,10 +31,11 @@ do
 
 if [[ $code == 0% ]];
 then
-    echo -e "\033[32m ping \t $i \t Successed \t packet loss: $code \033[0m"
+    printf "\033[32m ping\t%-15s\tSuccessed\tpacket loss: %-6s\033[0m\n" "$i" "$code"
 else
-    echo -e "\033[31m ping \t $i \t Failed \t packet loss: $code \033[0m"
+    printf "\033[31m ping\t%-15s\tFailed\t\tpacket loss: %-6s\033[0m\n" "$i" "$code"
 fi
+
 done
 
 echo --------------------ping stop--------------------
