@@ -1,29 +1,28 @@
 #! /bin/bash
 #author links
 
-function usage()
-{
+function usage(){
     echo "Usage:"
     echo "ping_ips.sh <ip_list_file>"
 
     echo "Example:"
-    echo " iptables_create_port.sh ip_list.txt"
+    echo "ping_ips.sh ip_list.txt"
 }
 
 if [[ "x$1" == "x-h" ]] || [[ "x$1" == "x--help" ]]; then
     usage
-    exit 1
+    return 0
 fi
 
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
     usage
-    exit 1
+    return 0
 fi
 
 
 ipfile=$1
 
-echo --------------------ping start-------------------
+echo -------------------- ping start -------------------
 
 for i in `cat $1`
 do
@@ -38,4 +37,4 @@ fi
 
 done
 
-echo --------------------ping stop--------------------
+echo -------------------- ping stop ---------------------
