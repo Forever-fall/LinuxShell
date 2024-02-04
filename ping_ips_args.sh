@@ -5,8 +5,7 @@ IP_FILE=""
 COUNT=""
 
 function usage() {
-echo "
-Usage:
+echo "Usage:
     $0 -i <ip_file> [-c <ping_counts>]
 
 Example:
@@ -15,7 +14,7 @@ Example:
 "
 }
 
-if [[ "x$1" == "x-h" ]] || [[ "x$1" == "x--help" || $# -eq 0]]; then
+if [[ "x$1" == "x-h" ]] || [[ "x$1" == "x--help" || $# -eq 0 ]]; then
     usage
     exit 1
 fi
